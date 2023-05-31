@@ -1,10 +1,10 @@
-const  App=()=> {
+const  CodeDisplay=()=> {
     return (
-      <div className="app">
+      <div className="code-display">
        
       </div>
     )
   }
   
-  export default App;
+  export default CodeDisplay;
   

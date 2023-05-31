@@ -6,7 +6,9 @@ const  CodeDisplay=()=> {
           <div className="button second"></div>
           <div className="button third"></div>
         </div>
-       
+       <div className="code-output">
+        <p></p>
+       </div>
       </div>
     )
   }

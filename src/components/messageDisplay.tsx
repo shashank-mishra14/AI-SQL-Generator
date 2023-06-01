@@ -1,9 +1,21 @@
-const  MessageDisplay=()=> {
+
+
+
+interface UserMessage {
+  role: string,
+  content:  string;
+}
+
+interface MessageDisplayProps {
+message: UserMessage
+}
+
+const  MessageDisplay=({message}:MessageDisplayProps)=> {
     return (
       <div className="message-display">
       <p id="icon">X</p>
-      <p>user</p>
-      <p>message</p>
+      <p>{message.role}</p>
+      <p>{message.content}</p>
       </div>
     )
   }

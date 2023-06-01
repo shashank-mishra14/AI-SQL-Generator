@@ -1,7 +1,10 @@
+import {useState} from "react";
 import CodeDisplay from "./components/codeDisplay";
 import MessagesDisplay from "./components/messagesDisplay";
 
 const App = () => {
+
+  const [chat,setChat] = useState([]); // ["create table users (id int, name varchar(255), email varchar(255), password varchar(255))"
   const getQuery = async () => {
     try {
       const options = {

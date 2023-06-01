@@ -26,6 +26,7 @@ app.post("/completions", async (req: Request, res: Response) => {
         content:"Create a SQL requeste to" + req.body.message
       }],
     });
+    res.send(completion.data.choices[0].message); //format of the data that is coming back from the API
   } catch (error) {
     console.log(error);
     res.status(500).send("Server Error");

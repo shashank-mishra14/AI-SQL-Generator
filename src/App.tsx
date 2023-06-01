@@ -41,11 +41,12 @@ const App = () => {
   console.log(chat)
 
   const filteredUserMessages =chat.filter(message => message.role=== "user")
+  const latestCode = chat.filter(message => message.role=== "assistant").pop()
   return (
     <div className="app">
       <MessagesDisplay userMessages={filteredUserMessages}/>
       <input value={value} onChange={e=>setValue(e.target.value)}/>
-      <CodeDisplay />
+      <CodeDisplay text={latestCode?.content|| ""} />
       <div className="button-container">
         <button id="get-query" onClick={getQuery}>
           Get Query!

@@ -1,7 +1,9 @@
 import express, { Application, Request, Response } from "express";
 import cors from "cors";
 import { Configuration, OpenAIApi } from "openai";
+import dotenv from "dotenv";
 
+dotenv.config();
 const PORT: number = 8000;
 
 const app: Application = express();
@@ -9,7 +11,7 @@ const app: Application = express();
 app.use(cors());
 app.use(express.json());
 
-const API_KEY: string = "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";
+const API_KEY: string = process.env.API_KEY || "";
 
 const configuration = new Configuration({
   apiKey: API_KEY,

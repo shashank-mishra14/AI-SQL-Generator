@@ -37,8 +37,10 @@ const App = () => {
       console.error(error);
     }
   };
-
-  console.log(chat)
+const clearChat = () => {
+  setValue("")
+  setChat([])
+}
 
   const filteredUserMessages =chat.filter(message => message.role=== "user")
   const latestCode = chat.filter(message => message.role=== "assistant").pop()
@@ -51,7 +53,7 @@ const App = () => {
         <button id="get-query" onClick={getQuery}>
           Get Query!
         </button>
-        <button id="clear-chat">Clear Chat</button>
+        <button id="clear-chat"onClick={clearChat}>Clear Chat</button>
       </div>
     </div>
   );
